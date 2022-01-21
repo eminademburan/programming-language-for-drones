@@ -1,0 +1,28 @@
+begin 
+## This program is to show how to implement functions
+	var param1 = 4
+	var param2 = 7
+	
+	## function with 2 parameters
+	function func (param1,  param2 ) does
+		if ( param1 == param2) begin
+			var temp = readTemp()
+	return param1 + param2
+end
+return 	param1 - param2
+	end
+
+	## function with no parameters
+	function noParam() does
+		if (param1 >= param2 )  begin
+			return param1
+		end
+		return param2
+	end
+	
+
+	## function with no return type
+	function void noReturn () does 
+		param1 = param1 + param2	
+	end
+end

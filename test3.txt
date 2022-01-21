@@ -1,0 +1,22 @@
+begin
+## Declare constants, modify variables
+## Shows how a for loop operates
+
+
+const intVar = 1000
+const doubleVar = 4.10
+const stringVar = "string"
+const charVar = 'O'
+	
+	var x = "string"
+	var y = 4
+	var z = .34
+	
+	for ( var  i = 1; i < y; i = i + 1) begin 
+		if ( i < 3) 
+begin
+			var param = i * 1000
+			goForward ( param )
+end	
+	end
+end

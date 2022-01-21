@@ -1,0 +1,29 @@
+begin
+##This program will show a menu to users to control the drone while time is less than 5000.
+connectWifi()
+const time = 5000
+while( readTime() <  time )
+begin 
+	output( "Please press 1 to land" )
+	output( "Please press 2 to take of " )
+	output( "Please press 3 to toggle camera" )
+	output( "Please press 4 to take picture" )
+	input( option)
+	if( option == 1)
+	begin 
+		land()
+	end
+	if(  option == 2 )
+	begin 
+		takeOf()
+	end
+	if( option == 3 )
+	begin
+		toggleCam()
+	end
+	if( option == 4)
+	begin 
+		takePic()
+	end
+end
+end

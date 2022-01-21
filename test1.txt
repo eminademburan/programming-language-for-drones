@@ -1,0 +1,20 @@
+begin
+##This program will take temperature values from the user and will allow the drone to
+## take on between the given temperature values while time is less than 5000.
+connectWifi()
+output( "Please enter the temperature values which drone can take on between them (First lower and second higher)" )
+input( lower)
+input( higher)
+while( readTime() < 5000 ) 
+begin
+ 	if( readTemp() < higher and readTemp() > lower )
+    	begin
+	 	takeOf()
+	end
+	else
+	begin 
+		land()
+	end	
+end
+land()
+end

@@ -1,0 +1,104 @@
+begin
+##This program will take temperature values from the user and will allow the drone to
+## take on between the given temperature values while time is less than 5000.
+connectWifi()
+output( "Please enter the temperature values which drone can take on between them (First lower and second higher)" )
+var lower
+var higher
+input( lower)
+input( higher)
+while( readTime() < 5000 ) 
+begin
+ 	if( readTemp() < higher and readTemp() > lower )
+    	begin
+	 	takeOf()
+        end
+	else 
+	begin
+		land()
+	end	
+end
+land()
+
+##This program will show a menu to users to control the drone while time is less than 5000.
+connectWifi()
+const time = 5000
+while( readTime() <  time )
+begin 
+	output( "Please press 1 to land" )
+	output( "Please press 2 to take of " )
+	output( "Please press 3 to toggle camera" )
+	output( "Please press 4 to take picture" )
+	var option
+	input( option)
+	if( option == 1)
+	begin 
+		land()
+	end
+	if(  option == 2 )
+	begin 
+		takeOf()
+	end
+	if( option == 3 )
+	begin
+		toggleCam()
+	end
+	if( option == 4)
+	begin 
+		takePic()
+	end
+end
+
+## Declare constants, modify variables
+## Shows how a for loop operates
+
+
+const intVar = 1000
+const doubleVar = 4.10
+const stringVar = "string"
+const charVar = 'O'
+	
+	var x = "string"
+	var y = 4
+	var z = .34
+	
+	for ( var  i = 1; i < y; i = i + 1) 
+	begin 
+		if ( i < 3) 
+		begin
+			var param = i
+			goForward ( param )
+		end	
+	end
+
+## This program is to show how to implement functions
+	var param1 = 4
+	var param2 = 7
+	## function with 2 parameters
+	function func (param1,  param2 ) does
+		if ( param1 == param2)
+		begin
+			var temp = readTemp()
+			var fileName = "writefile"
+			output( "ali" + "will get" + temp + "pencil" , fileName  )
+			return param1 + param2
+		end
+		return 	param1 - param2
+	end
+
+	## function with no parameters
+	function noParam() does
+		if ( not( param1 >= param2) )  begin
+			return param1
+			
+		end
+		return param2
+	end
+	
+
+	## function with no return type
+	function void noReturn () does 
+		param1 = param1 + param2	
+	end
+end
+
